@@ -15,12 +15,11 @@ def predict():
     # Get the data from the POST request.
 	data = request.get_json(force=True)['feature']
 	age_grp = formatting.age_grp(data[0])
-	gender = data[1]
+	gender = str(data[1]).lower()
 	region = 'region_'+str(data[2])
 	key = (age_grp, gender, region)
-	# predict = rec_dict[key]
-	# return jsonify(predict)
-	return jsonify(key)
+	predict = rec_dict[key]
+	return jsonify(predict)
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
