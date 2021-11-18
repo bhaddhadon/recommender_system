@@ -19,7 +19,8 @@ def predict():
 	region = 'region_'+str(data[2])
 	key = (age_grp, gender, region)
 	predict = rec_dict[key]
-	return predict
+	
+	return jsonify(predict)
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
