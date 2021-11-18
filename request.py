@@ -1,12 +1,18 @@
 import requests
 # Change the value of experience that you want to test
-url = 'http://143.198.213.147:5000/api'
-feature = [[5.8, 4.0, 1.2, 0.2]]
-labels ={
-  0: "setosa",
-  1: "versicolor",
-  2: "virginica"
-}
+url = 'http://172.17.0.2:5000/api'
+
+#-------------------------------------------------------------------
+# age: numeric
+# gender: ['F','M']
+# region: int (1 to 23)
+#-------------------------------------------------------------------
+
+age = 32
+gender = 'F'
+region = 3
+
+feature = [age, gender, region]
 
 r = requests.post(url,json={'feature': feature})
-print(labels[r.json()])
+print(r)
