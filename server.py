@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Load the model
 rec_dict = pickle.load(open('./trg/prod_rec_dict.pkl','rb'))
 
-@app.route('/api',methods=['POST'])
+@app.route('/api',methods=['GET'])
 def predict():
     # Get the data from the POST request.
 	data = request.get_json(force=True)['feature']
