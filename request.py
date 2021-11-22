@@ -14,5 +14,5 @@ region = 3
 
 feature = [age, gender, region]
 
-r = requests.post(url,json={'feature': feature})
+r = requests.get(url,json={'feature': feature})
 print(r.json())
